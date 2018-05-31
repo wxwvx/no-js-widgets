@@ -1,0 +1,27 @@
+.percentage {
+  width: 200px;
+  height: 200px;
+  transform: rotate(-90deg); }
+
+.skill__circle {
+  fill: transparent;
+  stroke-width: 10px;
+  stroke: #ccc; }
+
+.skill__circle_above {
+  stroke: green;
+  stroke-dasharray: 251;
+  stroke-dashoffset: 251;
+  animation: fill 100s linear infinite;
+  animation-play-state: paused; }
+
+@keyframes fill {
+  from {
+    stroke-dashoffset: 251; }
+  to {
+    stroke-dashoffset: 0; } }
+.skill__circle_above[style="animation-delay: -100s"] {
+  stroke-dashoffset: 0;
+  animation: initial; }
+
+/*# sourceMappingURL=percentage.css.map */

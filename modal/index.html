@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Modal</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="../common.css">
+  <link rel="stylesheet" href="./modal.css">
+</head>
+<body>
+  <div class="container">
+    <label for="modal-controller" class="open-modal">Открыть модалку</label>
+    <div class="popup">
+      <input type="checkbox" id="modal-controller">
+      <div class="popup__overlay">
+        <label for="modal-controller" class="popup__overlay-layer"></label>
+        <div class="popup__container">
+          <h1>Hola amigo!</h1>
+          <label for="modal-controller" class="popup__close">
+            <i class="fa fa-times"></i>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,137 @@
+.slider {
+  display: inline-block;
+  text-align: center;
+}
+
+.slider__slides {
+  width: 500px;
+  height: 300px;
+  position: relative;
+}
+
+.slider__container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  font-size: 0;
+  white-space: nowrap;
+  transition: left .3s;
+}
+
+.slider__viewport {
+  height: 300px;
+  overflow: hidden;
+  width: 500px;
+  position: relative;
+}
+
+.slider__item {
+  display: inline-block;
+}
+
+.slider__dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider__dots {
+  margin-top: 20px;
+}
+
+.slider__controls {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -20px;
+  text-align: center;
+}
+
+.slider__control {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #cccccc;
+  display: inline-block;
+  pointer-events: auto;
+
+  &:hover {
+    background: darken(#ccc, 30%);
+  }
+}
+
+.slider__image {
+  display: block;
+}
+
+.slider__dot {
+  margin-right: 20px;
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.slider__target {
+  display: none;
+}
+
+.slider__prev-next {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.slider__arrow {
+  text-decoration: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  &:before {
+    display: block;
+    width: 50px;
+    height: 50px;
+    font-size: 50px;
+    font-family: 'FontAwesome';
+    color: #fff;
+  }
+  &_next {
+    right: 0;
+    &:before {
+      content: "\f0a9";
+    }
+  }
+  &_prev {
+    left: 0;
+    
+    &:before {
+      content: "\f0a8";
+    }
+  }
+}
+
+.slider__arrows-container {
+  display: none;
+
+  &:first-child {
+    display: block;
+  }
+}
+
+
+@for $i from 0 through 4 {
+  $nth: $i + 1;
+  #target_#{$nth}:target~.slider__viewport .slider__container {
+    left: $i * -500px;
+  }
+  #target_#{$nth}:target~.slider__controls [href='#target_#{$nth}'] {
+    background: red;
+  }
+  
+  #target_#{$nth}:target ~ .slider__viewport .slider__prev-next .slider__arrows-container:nth-child(#{$nth}) {
+    display: block;
+  }
+}
